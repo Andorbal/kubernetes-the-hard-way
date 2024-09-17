@@ -26,7 +26,7 @@ Now it's time to download a copy of this tutorial which contains the configurati
 
 ```bash
 git clone --depth 1 \
-  https://github.com/kelseyhightower/kubernetes-the-hard-way.git
+  https://github.com/andorbal/kubernetes-the-hard-way.git
 ```
 
 Change into the `kubernetes-the-hard-way` directory:
@@ -112,7 +112,7 @@ kubectl version --client
 ```
 
 ```text
-Client Version: v1.28.3
+Client Version: v1.31.1
 Kustomize Version: v5.0.4-0.20230601165947-6ce0bf390ce3
 ```
 
