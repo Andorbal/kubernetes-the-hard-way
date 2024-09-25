@@ -19,9 +19,12 @@ cat machines.txt
 ```
 
 ```text
-XXX.XXX.XXX.XXX server.kubernetes.local server  
-XXX.XXX.XXX.XXX node-0.kubernetes.local node-0 10.200.0.0/24
-XXX.XXX.XXX.XXX node-1.kubernetes.local node-1 10.200.1.0/24
+XXX.XXX.XXX.XXX server00.kubernetes.local server00
+XXX.XXX.XXX.XXX server01.kubernetes.local server01
+XXX.XXX.XXX.XXX server02.kubernetes.local server02
+XXX.XXX.XXX.XXX node00.kubernetes.local node00 10.241.0.0/24
+XXX.XXX.XXX.XXX node01.kubernetes.local node01 10.241.1.0/24
+XXX.XXX.XXX.XXX node02.kubernetes.local node02 10.241.2.0/24
 ```
 
 Now it's your turn to create a `machines.txt` file with the details for the three machines you will be using to create your Kubernetes cluster. Use the example machine database from above and add the details for your machines. 

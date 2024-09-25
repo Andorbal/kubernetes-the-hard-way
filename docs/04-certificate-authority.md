@@ -42,7 +42,7 @@ Generate the certificates and private keys:
 
 ```bash
 certs=(
-  "admin" "node-0" "node-1"
+  "admin" "node00" "node01" "node02"
   "kube-proxy" "kube-scheduler"
   "kube-controller-manager"
   "kube-api-server"
@@ -80,7 +80,7 @@ In this section you will copy the various certificates to each machine under a d
 Copy the appropriate certificates and private keys to the `node-0` and `node-1` machines:
 
 ```bash
-for host in node-0 node-1; do
+for host in node00 node01 node02; do
   ssh root@$host mkdir /var/lib/kubelet/
   
   scp ca.crt root@$host:/var/lib/kubelet/
@@ -93,14 +93,16 @@ for host in node-0 node-1; do
 done
 ```
 
-Copy the appropriate certificates and private keys to the `server` machine:
+Copy the appropriate certificates and private keys to the `server` machines:
 
 ```bash
-scp \
-  ca.key ca.crt \
-  kube-api-server.key kube-api-server.crt \
-  service-accounts.key service-accounts.crt \
-  root@server:~/
+for host in server00 server01 server02; do
+  scp \
+    ca.key ca.crt \
+    kube-api-server.key kube-api-server.crt \
+    service-accounts.key service-accounts.crt \
+    root@$host:~/
+done
 ```
 
 > The `kube-proxy`, `kube-controller-manager`, `kube-scheduler`, and `kubelet` client certificates will be used to generate client authentication configuration files in the next lab.
