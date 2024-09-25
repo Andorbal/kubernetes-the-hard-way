@@ -50,8 +50,8 @@ Each etcd member must have a unique name within an etcd cluster. Set the etcd na
 Create the `etcd.service` systemd unit file:
 
 ```bash
-ETCD_CONFIG_NAME=$(hostname -s)
-ETCD_CONFIG_INTERNAL_IP=$(hostname -I | awk '{ print $1 }')
+ETCD_CONFIG_NAME=$(hostname -s) \
+ETCD_CONFIG_INTERNAL_IP=$(hostname -I | awk '{ print $1 }') \
 envsubst < etcd.service > /etc/systemd/system/etcd.service
 ```
 
