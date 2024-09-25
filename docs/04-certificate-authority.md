@@ -77,7 +77,7 @@ ls -1 *.crt *.key *.csr
 
 In this section you will copy the various certificates to each machine under a directory that each Kubernetes components will search for the certificate pair. In a real-world environment these certificates should be treated like a set of sensitive secrets as they are often used as credentials by the Kubernetes components to authenticate to each other.
 
-Copy the appropriate certificates and private keys to the `node-0` and `node-1` machines:
+Copy the appropriate certificates and private keys to the `node00`, `node01`, and `node02` machines:
 
 ```bash
 for host in node00 node01 node02; do
